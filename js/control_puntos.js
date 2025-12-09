@@ -82,7 +82,7 @@ function isAllianceMemberList() {
         }
 
         let html = `
-          <table style="width:100%; border-collapse:collapse; font-size:10px;">
+          <table style="width:100%; border-collapse:collapse; font-size:12px; table-layout:fixed;">
             <tr>
               <th>Jugador</th>
               <th>Puntos</th>
