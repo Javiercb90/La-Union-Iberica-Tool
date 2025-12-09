@@ -94,17 +94,34 @@ function isAllianceMemberList() {
         `;
 
         rows.forEach(r => {
+
+          const coords = r.coords || "";
+          let coordsLink = coords;
+        
+          // Crear hipervínculo si viene tipo 1:2:7
+          if (coords && coords.includes(":")) {
+            const partes = coords.split(":");
+            const g = partes[0];
+            const s = partes[1];
+            const p = partes[2];
+        
+            const urlGaleria = `https://pr0game.com/uni6/game.php?page=galaxy&galaxy=${g}&system=${s}&position=${p}`;
+        
+            coordsLink = `<a href="${urlGaleria}" target="_blank" style="color:#4fc3f7;">${coords}</a>`;
+          }
+        
           html += `
             <tr>
               <td>${r.name || ""}</td>
               <td>${r.puntosTexto || ""}</td>
               <td>${r.diferencia || ""}</td>
               <td>${r.cargo || ""}</td>
-              <td>${r.coords || ""}</td>
+              <td>${coordsLink}</td>
               <td>${r.lastConnection || ""}</td>
             </tr>
           `;
         });
+
 
         html += `</table>`;
         output.innerHTML = html;
