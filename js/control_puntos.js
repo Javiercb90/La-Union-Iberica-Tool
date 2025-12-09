@@ -25,7 +25,7 @@ function isAllianceMemberList() {
       position: "fixed",
       bottom: "20px",
       right: "20px",
-      width: "260px",
+      width: "340px",
       background: "rgba(0,0,0,0.85)",
       color: "white",
       padding: "12px",
@@ -82,7 +82,7 @@ function isAllianceMemberList() {
         }
 
         let html = `
-          <table style="width:100%; border-collapse:collapse; font-size:12px; table-layout:fixed;">
+          <table style="width:100%; border-collapse:collapse; font-size:10px; table-layout:fixed;">
             <tr>
               <th>Jugador</th>
               <th>Puntos</th>
@@ -112,17 +112,16 @@ function isAllianceMemberList() {
         
           html += `
             <tr>
-              <td>${r.name || ""}</td>
-              <td>${r.puntosTexto || ""}</td>
-              <td>${r.diferencia || ""}</td>
-              <td>${r.cargo || ""}</td>
-              <td>${coordsLink}</td>
-              <td>${r.lastConnection || ""}</td>
+              <td style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; padding:3px;">${r.name || ""}</td>
+              <td style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; padding:3px;">${r.puntosTexto || ""}</td>
+              <td style="white-space:nowrap; padding:3px; text-align:center;">${r.diferencia || ""}</td>
+              <td style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; padding:3px;">${r.cargo || ""}</td>
+              <td style="white-space:nowrap; padding:3px;">${coordsLink}</td>
+              <td style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; padding:3px;">${r.lastConnection || ""}</td>
             </tr>
           `;
         });
-
-
+        
         html += `</table>`;
         output.innerHTML = html;
       }
