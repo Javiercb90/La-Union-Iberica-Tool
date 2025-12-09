@@ -40,7 +40,7 @@ function isAllianceMemberList() {
       <div style="font-weight:bold; margin-bottom:8px;">LA UNIÓN IBÉRICA</div>
       <button id="extract-btn"
         style="width:100%; padding:6px; background:#1e88e5; color:white; border:none; border-radius:4px; cursor:pointer; margin-bottom:6px;">
-        Estadisticas Alianza
+        Cargar Info Alianza
       </button>
       <div id="extract-output" style="margin-top:4px; max-height:300px; overflow:auto; background:black; padding:6px; border-radius:4px; font-size:10px;"></div>
     `;
@@ -108,9 +108,12 @@ function isAllianceMemberList() {
         
             coordsLink = `<a href="${urlGaleria}" target="_blank" style="color:#4fc3f7;">${coords}</a>`;
           }
-        
+          let bgColor = "#fff2cc"; // amarillo por defecto
+          if (r.diferencia > 10) bgColor = "#c6efce";   // verde
+          if (r.diferencia < 10) bgColor = "#ffc7ce";   // rojo
+          
           html += `
-            <tr>
+            <tr style="background:${bgColor};">
               <td style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; padding:3px;">${r.name || ""}</td>
               <td style="white-space:nowrap; padding:3px;">${r.puntosTexto || ""}</td>
               <td style="white-space:nowrap; padding:3px; text-align:center;">${r.diferencia || ""}</td>
