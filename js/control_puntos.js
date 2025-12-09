@@ -113,7 +113,7 @@ function isAllianceMemberList() {
           html += `
             <tr>
               <td style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; padding:3px;">${r.name || ""}</td>
-              <td style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; padding:3px;">${r.puntosTexto || ""}</td>
+              <td style="white-space:nowrap; padding:3px;">${r.puntosTexto || ""}</td>
               <td style="white-space:nowrap; padding:3px; text-align:center;">${r.diferencia || ""}</td>
               <td style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; padding:3px;">${r.cargo || ""}</td>
               <td style="white-space:nowrap; padding:3px;">${coordsLink}</td>
